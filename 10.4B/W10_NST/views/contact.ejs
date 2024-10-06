@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include head content like meta tags, CSS links, and page title -->
+    <%- include('head'); -%>
+</head>
+
+<body>
+    <header>
+        <!-- Include header content such as navigation, logo, and any header-specific styles or scripts -->
+        <%- include('header'); -%>
+
+        <!-- Standout Ribbon Section for Displaying a Promotional Message or Site Banner -->
+        <div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+            style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+            <div class="row justify-content-center">
+                <div class="col-12 mx-auto text-center py-5">
+                    <!-- Main headline with responsive font sizes for different screen sizes -->
+                    <p class="display-1 display-md-2 display-sm-3">Connect, share and learn</p>
+                    <!-- Sub-headline with responsive font sizes for readability on various devices -->
+                    <p class="fs-2 fs-md-3 fs-sm-4">Bringing together the top talent in Data!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Form Section to Capture User's Contact Details and Message -->
+        <h1 class="col-sm-8 mx-auto text-center py-5">
+            <!-- Dynamically render the title based on the publication context (EJS variable) -->
+            <%= titlePublication %>
+        </h1>
+        <div class="container form-container mt-3">
+            <!-- Form for submitting contact details and messages; uses POST method -->
+            <form action="/contact" method="POST" id="contactForm">
+
+                <!-- First Name Input Field -->
+                <div class="row mb-3">
+                    <!-- Label for First Name -->
+                    <label for="firstname" class="col-sm-2 col-form-label">Firstname:</label>
+                    <div class="col-sm-5">
+                        <!-- Input field to capture user's first name; required for submission -->
+                        <input type="text" class="form-control" id="firstname" name="fname"
+                            placeholder="Enter your first name" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <!-- Span to display validation messages or errors for first name -->
+                        <span id="nameError"></span>
+                    </div>
+                </div>
+
+                <!-- Surname Input Field -->
+                <div class="row mb-3">
+                    <!-- Label for Surname -->
+                    <label for="surname" class="col-sm-2 col-form-label">Surname:</label>
+                    <div class="col-sm-5">
+                        <!-- Input field to capture user's surname; required for submission -->
+                        <input type="text" class="form-control" id="surname" name="lname"
+                            placeholder="Enter your surname" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <!-- Span to display validation messages or errors for surname -->
+                        <span id="lnameError"></span>
+                    </div>
+                </div>
+
+                <!-- Email Input Field -->
+                <div class="row mb-3">
+                    <!-- Label for Email -->
+                    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-5">
+                        <!-- Input field for capturing user's email address; required and prefilled if available -->
+                        <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com"
+                            value="<%= email ? email : '' %>" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <!-- Span to display validation messages or errors for email -->
+                        <span id="emailError"></span>
+                    </div>
+                </div>
+
+                <!-- Mobile Input Field -->
+                <div class="row mb-3">
+                    <!-- Label for Mobile Number -->
+                    <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
+                    <div class="col-sm-5">
+                        <!-- Input field for user's mobile number; expected format is a 10-digit number -->
+                        <input type="tel" class="form-control" id="mobile" name="mobile"
+                            placeholder="Enter 10-digit number" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <!-- Span to display validation messages or errors for mobile number -->
+                        <span id="mobileError"></span>
+                    </div>
+                </div>
+
+                <!-- Category Selection Dropdown -->
+                <div class="row mb-3">
+                    <!-- Label for Category Selection -->
+                    <label for="category" class="col-sm-2 col-form-label">Category:</label>
+                    <div class="col-sm-5">
+                        <!-- Dropdown to select category of the contact form; options are dynamically selected -->
+                        <select class="form-control" id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="membership" <%=category==='membership' ? 'selected' : '' %>>Membership</option>
+                            <option value="events" <%=category==='events' ? 'selected' : '' %>>Events</option>
+                            <option value="publications" <%=category==='publications' ? 'selected' : '' %>>Publications</option>
+                            <option value="other" <%=category==='other' ? 'selected' : '' %>>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <!-- Span to display validation messages or errors for category selection -->
+                        <span id="categoryError"></span>
+                    </div>
+                </div>
+
+                <!-- Message Text Area for Comments -->
+                <div class="row mb-3">
+                    <!-- Label for the Message or Comments -->
+                    <label for="poem" class="form-label col-sm-2">Message:</label>
+                    <div class="col-sm-5">
+                        <!-- Text area to allow the user to enter a multi-line message or comment -->
+                        <textarea class="form-control" id="poem" name="comments"
+                            rows="3"><%= date ? date : '' %> <%= message ? message : '' %></textarea>
+                    </div>
+                </div>
+
+                <!-- Form Buttons for Submission and Resetting the Form -->
+                <div class="d-flex mt-3">
+                    <!-- Button to submit the form; triggers form processing on the server -->
+                    <input class="btn btn-primary my-3 me-2" type="submit" id="processFormBtn" value="Process Form">
+                    <!-- Button to reset the form fields to their default values -->
+                    <input class="btn btn-secondary my-3" type="reset" id="resetFormBtn" value="Reset Form">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section to include shared footer content like links, copyright info, etc. -->
+    <footer class="text-center mt-auto">
+        <%- include('footer'); -%>
+    </footer>
+</body>
+
+</html>

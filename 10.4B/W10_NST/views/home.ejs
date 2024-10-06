@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('head'); -%>
+</head>
+
+<body>
+    <header>
+        <%- include('header'); -%>
+            <!-- Standout Ribbon Section -->
+            <div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+                style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+                <div class="row justify-content-center">
+                    <div class="col-12 mx-auto text-center py-5">
+                        <!-- Use Bootstrap's responsive font size classes -->
+                        <p class="display-1 display-md-2 display-sm-3">Connect, share and learn</p>
+                        <p class="fs-2 fs-md-3 fs-sm-4">Bringing together the top talent in Data!</p>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <!-- Key Product Highlights -->
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <img src="Key Product 1.png" alt="Description of the image" class="img-fluid w-100">
+            </div>
+            <hr>
+            <div class="row g-0">
+                <img src="Key Product 2.png" alt="Description of the image" class="img-fluid w-100">
+            </div>
+            <hr>
+            <div class="row g-0">
+                <img src="Key Product 3.png" alt="Description of the image" class="img-fluid w-100">
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center mt-auto">
+        <%- include('footer'); -%>
+    </footer>
+</body>
+
+</html>

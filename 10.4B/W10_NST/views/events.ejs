@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include shared head content (e.g., meta tags, stylesheets, title) from external EJS file -->
+    <%- include('head'); -%>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Include shared header content (e.g., navigation bar, branding) from external EJS file -->
+        <%- include('header'); -%>
+
+        <!-- Standout Ribbon Section: A visually prominent area, often used for banners or main messages -->
+        <div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+            style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+            <div class="row justify-content-center">
+                <!-- Centered content within the ribbon section -->
+                <div class="col-12 mx-auto text-center py-5">
+                    <!-- Main headline using responsive font sizes for various screen sizes -->
+                    <p class="display-1 display-md-2 display-sm-3">Connect, share and learn</p>
+                    <!-- Subheadline using responsive font sizes for improved readability on different devices -->
+                    <p class="fs-2 fs-md-3 fs-sm-4">Bringing together the top talent in Data!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section containing event descriptions and images -->
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Image Column (One-third width on medium and larger screens) -->
+                <div class="col-md-4 p-5">
+                    <!-- Responsive image with rounded corners -->
+                    <img src="Breaky Panel.jpg" alt="Description of Image" class="rounded-image"
+                        style="max-width: 100%; height: auto;">
+                </div>
+
+                <!-- Event Details Column (Two-thirds width on medium and larger screens) -->
+                <div class="col-md-8 mb-5 d-flex align-items-center justify-content-center"
+                    style="background-color: #c7dee6; height: auto;">
+                    <div>
+                        <!-- Event Title and Date -->
+                        <h1><strong><a id="event1">Adopting new technologies whilst building foundations</a></strong>
+                        </h1>
+                        <h5><i><a id="date1">12/10/2024</a></i></h5>
+                        <!-- List of key event topics or questions for users -->
+                        <ul style="list-style-position: inside;">
+                            <li>Do you want to take advantage of new tech?</li>
+                            <li>Do you also need to build foundational data & analytics infrastructure?</li>
+                            <li>Do you want to know how to balance both for maximum value?</li>
+                        </ul>
+                        <div class="mt-4">
+                            <!-- Registration Form for the Event -->
+                            <form id="registerForm1" class="register-form" data-event="event1" data-date="date1"
+                                data-category="events" action="/register" method="POST">
+                                <!-- Submit button for the event registration -->
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Event Details Column (Two-thirds width on medium and larger screens) -->
+                <div class="col-md-8 mb-5 d-flex align-items-center justify-content-center"
+                    style="background-color: #c7dee6; height: auto;">
+                    <div>
+                        <!-- Second Event Title and Date -->
+                        <h1><strong><a id="event2">Workshop: Data modelling architectures</a></strong></h1>
+                        <h5><i><a id="date2">12/10/2024</a></i></h5>
+                        <!-- List of key workshop topics for participants -->
+                        <ul style="list-style-position: inside;">
+                            <li>Kimball Vs Inmon</li>
+                            <li>Data-vault and Data-mesh</li>
+                            <li>Governance</li>
+                        </ul>
+                        <div class="mt-4">
+                            <!-- Registration Form for the Workshop -->
+                            <form id="registerForm2" class="register-form" data-event="event2" data-date="date2"
+                                data-category="events" action="/register" method="POST">
+                                <!-- Submit button for the workshop registration -->
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column (One-third width on medium and larger screens) -->
+                <div class="col-md-4 p-5">
+                    <!-- Responsive image with rounded corners -->
+                    <img src="Workshop.jpg" alt="Description of Image" class="rounded-image"
+                        style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Section for Dynamic Form Handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all forms with the class 'register-form' on page load
+            const registerForms = document.querySelectorAll('.register-form');
+
+            // Loop through each form and add a 'submit' event listener
+            registerForms.forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    // Get element IDs for `date`, `event`, and `category` from data attributes of the form
+                    const dateElementId = form.getAttribute('data-date');
+                    const eventElementId = form.getAttribute('data-event');
+                    const category = form.getAttribute('data-category'); // Get the `data-category` value
+
+                    // Retrieve the innerHTML content of the `date` and `event` elements based on their IDs
+                    const dateValue = document.getElementById(dateElementId).innerHTML;
+                    const eventValue = document.getElementById(eventElementId).innerHTML;
+
+                    // Construct and append query parameters (`date`, `event`, and `category`) to the form's action URL
+                    this.action = `/register?date1=${encodeURIComponent(dateValue)}&event1=${encodeURIComponent(eventValue)}&category=${encodeURIComponent(category)}`;
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-auto">
+        <!-- Include shared footer content from external EJS file -->
+        <%- include('footer'); -%>
+    </footer>
+</body>
+
+</html>

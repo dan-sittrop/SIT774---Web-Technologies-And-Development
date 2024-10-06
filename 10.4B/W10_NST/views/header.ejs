@@ -1,0 +1,239 @@
+<!-- Navigation Bar -->
+<nav class="sticky-top" style="background-color: #EAE0C8;">
+    <div class="container-fluid">
+        <div class="row header-top d-flex align-items-center">
+            <!-- Adjust column width based on screen size -->
+            <div class="col-12 col-md-9">
+                <div class="scrolling-banner" id="banner">Data Leadership Event - 24th of October 2024 -
+                    "Adopting new technology whilst building foundations" <strong>Register Now!!</strong>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 m-2 d-flex align-items-center justify-content-end">
+                <a href="/login" class="btn btn-outline-secondary">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+<div class="container-flex">
+    <nav class="navbar navbar-expand-lg" style="background-color: #add8e6;">
+        <div class="container-fluid">
+            <!-- Navbar Toggler Button for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="FullLogo_Transparent2.png" alt="Bootstrap" width="80%" height="80%">
+            </a>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" id="homelink">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">Membership</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/membership">Membership Registration</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/events">All Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="publicationsDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/blog">Articles</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/contact">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Display Username or Guest -->
+            <div class="d-flex align-items-center">
+                <% if (username) { %>
+                    <h5 class="mb-0"><strong>Welcome, <%= username %>!</strong></h5>
+                    <button class="btn btn-outline-secondary ms-3" id="offcanvasTrigger" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <% } else { %>
+                    <p class="mb-0">No user logged in</p>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</nav>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasExampleLabel"><strong>Your Activity</strong></h3>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- Table for Membership Data -->
+        <h5>Memberships</h5>
+        <table class="table" id="membershipTable">
+            <thead>
+                <tr>
+                    <th class="col-1">ID</th>
+                    <th class="col-2">Username</th>
+                    <th class="col-2">Category</th>
+                    <th class="col-2">Date</th>
+                    <th class="col-4">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Membership data will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <!-- Table for Events Data -->
+        <h5>Registered Events</h5>
+        <table class="table" id="eventsTable">
+            <thead>
+                <tr>
+                    <th class="col-1">ID</th>
+                    <th class="col-2">Username</th>
+                    <th class="col-2">Category</th>
+                    <th class="col-2">Date</th>
+                    <th class="col-4">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Events data will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <!-- Table for Publications Data -->
+        <h5>Saved Articles</h5>
+        <table class="table" id="publicationsTable">
+            <thead>
+                <tr>
+                    <th class="col-1">ID</th>
+                    <th class="col-2">Username</th>
+                    <th class="col-2">Category</th>
+                    <th class="col-2">Date</th>
+                    <th class="col-3">Description</th>
+                    <th class="col-2">Misc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Publications data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.getElementById('offcanvasTrigger').addEventListener('click', function (e) {
+        // Fetch membership data
+        fetch('/user-metadata?category=membership')
+            .then(response => response.json())
+            .then(data => {
+                // Populate the membership table with data
+                const membershipTableBody = document.querySelector('#membershipTable tbody');
+                membershipTableBody.innerHTML = ''; // Clear any existing content
+
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.id}</td>
+                            <td>${item.username}</td>
+                            <td>${item.category}</td>
+                            <td>${item.date}</td>
+                            <td>${item.description}</td>
+                        `;
+                        membershipTableBody.appendChild(row);
+                    });
+                } else {
+                    // If no data, show a message
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="6">No data available.</td>`;
+                    membershipTableBody.appendChild(row);
+                }
+            })
+            .catch(error => console.error('Error fetching membership data:', error));
+
+        // Fetch events data
+        fetch('/user-metadata?category=events')
+            .then(response => response.json())
+            .then(data => {
+                // Populate the events table with data
+                const eventsTableBody = document.querySelector('#eventsTable tbody');
+                eventsTableBody.innerHTML = ''; // Clear any existing content
+
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.id}</td>
+                            <td>${item.username}</td>
+                            <td>${item.category}</td>
+                            <td>${item.date}</td>
+                            <td>${item.description}</td>
+                        `;
+                        eventsTableBody.appendChild(row);
+                    });
+                } else {
+                    // If no data, show a message
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="6">No data available.</td>`;
+                    eventsTableBody.appendChild(row);
+                }
+            })
+            .catch(error => console.error('Error fetching events data:', error));
+
+        // Fetch publications data
+        fetch('/user-metadata?category=publications')
+            .then(response => response.json())
+            .then(data => {
+                // Populate the publications table with data
+                const publicationsTableBody = document.querySelector('#publicationsTable tbody');
+                publicationsTableBody.innerHTML = ''; // Clear any existing content
+
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.id}</td>
+                            <td>${item.username}</td>
+                            <td>${item.category}</td>
+                            <td>${item.date}</td>
+                            <td>${item.description}</td>
+                            <td><a href="${item.misc}" target="_blank">Open Article</a></td>
+                        `;
+                        publicationsTableBody.appendChild(row);
+                    });
+                } else {
+                    // If no data, show a message
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="6">No data available.</td>`;
+                    publicationsTableBody.appendChild(row);
+                }
+            })
+            .catch(error => console.error('Error fetching publications data:', error));
+    });
+</script>

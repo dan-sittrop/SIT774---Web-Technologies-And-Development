@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include head content such as meta tags, CSS styles, title, and any other head-specific resources -->
+    <%- include('head'); -%>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Include shared header content like navigation bar, branding/logo, and any site-wide styles or scripts -->
+        <%- include('header'); -%>
+
+        <!-- Standout Ribbon Section -->
+        <div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+            style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+            <!-- Centered row for the ribbon's text content -->
+            <div class="row justify-content-center">
+                <!-- Main content of the ribbon centered horizontally with padding -->
+                <div class="col-m-12 mx-auto text-center py-5">
+                    <!-- Large, eye-catching text for the main message -->
+                    <p style="font-size: 5.5rem">Connect, share and learn</p>
+                    <!-- Sub-text providing additional context -->
+                    <p style="font-size: 2.5rem">Bringing together the top talent in Data!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section for Form Submission Details -->
+    <main class="container mt-5">
+        <!-- Display the title of the current page dynamically -->
+        <h1 class="mb-4">
+            <%= title %>
+        </h1>
+
+        <!-- Message indicating successful form submission -->
+        <p>Your form has been successfully submitted! Here are the details you provided:</p>
+
+        <!-- Table to display all form data submitted by the user -->
+        <table class="table table-bordered table-striped">
+            <!-- Table header for field names and values -->
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <!-- Table body containing the actual form data -->
+            <tbody>
+                <tr>
+                    <!-- Display the label and value for 'First Name' -->
+                    <td>First Name</td>
+                    <td>
+                        <%= fname %>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Display the label and value for 'Last Name' -->
+                    <td>Last Name</td>
+                    <td>
+                        <%= lname %>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Display the label and value for 'Email' -->
+                    <td>Email</td>
+                    <td>
+                        <%= email %>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Display the label and value for 'Mobile' -->
+                    <td>Mobile</td>
+                    <td>
+                        <%= mobile %>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Display the label and value for 'Category' -->
+                    <td>Category</td>
+                    <td>
+                        <%= category %>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Display the label and value for 'Comments' -->
+                    <td>Comments</td>
+                    <td>
+                        <%= comments %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Link to navigate back to the contact form for resubmission or a new submission -->
+        <div class="mt-4">
+            <a href="/contact" class="btn btn-primary">Submit Another Response</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-auto">
+        <!-- Include shared footer content like links, copyright information, social media icons -->
+        <%- include('footer'); -%>
+    </footer>
+</body>
+
+</html>
