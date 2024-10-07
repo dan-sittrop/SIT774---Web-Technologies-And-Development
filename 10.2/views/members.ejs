@@ -1,0 +1,58 @@
+<%- include('header'); -%>
+
+<header>
+    <div class="container-fluid bg-primary-subtle">
+        <div class="col-sm-8 mx-auto text-center py-2">
+            <h1 class="display-4">dKin Caps</h1>
+            <p class="lead">A young and inspiring organisation whose primary purpose is to bring you the highest quality headwear available.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container mt-5">
+        <h3 class="mb-3">Membership List</h3>
+        <p>The table below lists all the registered members of the <strong>dKin Caps</strong> community. Accessing this data, stored in a persistent database, is performed on the server.</p>
+
+        <!-- Membership Table -->
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Mobile#</th>
+                    <th>Cap Style</th>
+                    <th>Number of Caps</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (members.length === 0) { %>
+                    <tr>
+                        <td colspan="8" class="text-center"><em>List is Empty</em></td>
+                    </tr>
+                <% } else { %>
+                    <% members.forEach(member => { %>
+                        <tr>
+                            <td><%= member.id %></td>
+                            <td><%= member.fname %></td>
+                            <td><%= member.lname %></td>
+                            <td><%= member.email %></td>
+                            <td><%= member.mobile %></td>
+                            <td><%= member.style %></td>
+                            <td><%= member.caps %></td>
+                            <td><%= member.comments %></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+
+        <!-- Link to Feedback Form -->
+        <a href="/" class="d-block text-center mt-3">Click here to return to the Membership form</a>
+    </div>
+</main>
+
+<%- include('footer'); -%>

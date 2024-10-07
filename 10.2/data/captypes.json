@@ -1,0 +1,87 @@
+{
+  "captypes": [
+    {
+      "id": "0",
+      "name": "Baseball Cap",
+      "code": "BBC",
+      "description": "A casual, adjustable cap with a curved brim and structured front.",
+      "price": "22.50",
+      "colours": ["2", "5"]
+    },
+    {
+      "id": "1",
+      "name": "Fedora Cap",
+      "code": "FDC",
+      "description": "A stylish hat with a wide brim and a pinched crown, often associated with classic fashion.",
+      "price": "68.33",
+      "colours": ["1"]
+    },
+    {
+      "id": "2",
+      "name": "Sun Cap",
+      "code": "SNC",
+      "description": "A lightweight hat designed with a broad brim to shield the face and neck from the sun.",
+      "price": "25.99",
+      "colours": ["0", "1", "2", "5"]
+    },
+    {
+      "id": "3",
+      "name": "Porkpie Cap",
+      "code": "PPC",
+      "description": "A small, round hat with a flat top and a narrow brim, offering a distinctive vintage look.",
+      "price": "30.00",
+      "colours": ["3", "4"]
+    },
+    {
+      "id": "4",
+      "name": "Beret Cap",
+      "code": "BRC",
+      "description": "A soft, round, flat-crowned hat that sits snugly on the head, often associated with artistic or military styles.",
+      "price": "66.50",
+      "colours": ["2", "3", "4"]
+    },
+    {
+      "id": "5",
+      "name": "Sun Visor",
+      "code": "SNV",
+      "description": "A brimmed headwear with no crown, designed to shield the eyes from the sun while keeping the top of the head open.",
+      "price": "11.05",
+      "colours": ["2", "5"]
+    },
+    {
+      "id": "6",
+      "name": "Bucket Cap",
+      "code": "BBC",
+      "description": "A soft, wide-brimmed hat that offers protection from the sun and rain, with a relaxed fit.",
+      "price": "16.99",
+      "colours": ["2"]
+    },
+    {
+      "id": "7",
+      "name": "Panama Cap",
+      "code": "PNC",
+      "description": "A light, breathable hat made from straw or similar materials, traditionally featuring a wide brim for sun protection.",
+      "price": "45.10",
+      "colours": ["0", "3", "4"]
+    },
+    {
+      "id": "8",
+      "name": "Flat Cap",
+      "code": "FLC",
+      "description": "A rounded, flat-crowned hat with a small, stiff brim, known for its classic, tailored appearance.",
+      "price": "36.99",
+      "colours": ["1", "3"]
+    },
+    {
+      "id": "9",
+      "name": "Cowboy Cap",
+      "code": "CBC",
+      "description": "A wide-brimmed hat with a high, rounded crown, designed for sun protection and rugged outdoor wear.",
+      "price": "150.00",
+      "colours": ["0"]
+    }
+  ]
+}
+
+
+

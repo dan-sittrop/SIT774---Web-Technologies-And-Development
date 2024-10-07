@@ -1,0 +1,83 @@
+{
+  "transactions": [
+    {
+      "tid": "0",
+      "staffid": "1",
+      "purchased": "2024-01-16T12:27:43",
+      "items": [
+        {
+          "capid": "0",
+          "colour": "5"
+        },
+        {
+          "capid": "3",
+          "colour": "3"
+        },
+        {
+          "capid": "6",
+          "colour": "2"
+        }
+      ]
+    },
+    {
+      "tid": "1",
+      "staffid": "0",
+      "purchased": "2024-02-08T10:44:03",
+      "items": [
+        {
+          "capid": "1",
+          "colour": "5"
+        },
+        {
+          "capid": "3",
+          "colour": "4"
+        },
+        {
+          "capid": "4",
+          "colour": "2"
+        }
+      ]
+    },
+    {
+      "tid": "2",
+      "staffid": "0",
+      "purchased": "2024-03-20T14:43:22",
+      "items": [
+        {
+          "capid": "1",
+          "colour": "1"
+        },
+        {
+          "capid": "3",
+          "colour": "3"
+        }
+      ]
+    },
+    {
+      "tid": "3",
+      "staffid": "2",
+      "purchased": "2024-03-20T13:00:25",
+      "items": [
+        {
+          "capid": "9",
+          "colour": "0"
+        }
+      ]
+    },
+    {
+      "tid": "4",
+      "staffid": "1",
+      "purchased": "2024-06-15T13:04:25",
+      "items": [
+        {
+          "capid": "5",
+          "colour": "5"
+        },
+        {
+          "capid": "7",
+          "colour": "0"
+        }
+      ]
+    }
+  ]
+}
