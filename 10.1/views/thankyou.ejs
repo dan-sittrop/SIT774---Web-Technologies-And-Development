@@ -1,0 +1,86 @@
+<%- include('header'); -%>
+
+    <header>
+        <div class="container-fluid bg-primary-subtle">
+            <div class="col-sm-8 mx-auto text-center py-2">
+                <h1 class="display-4">dKin Caps</h1>
+                <p class="lead ">A young and inspiring organisation whose
+                    primary purpose is to bring you the highest quality headwear available.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="container mt-5">
+            <h4>dKin Caps: Form Submitted successfully</h4>
+            <p>Welcome <%= fname %> to the <strong>dKin Caps</strong> community. Your membership details have been received. Please check them below:</p>
+            <h5 class="mb-2">Membership Details</h5>
+
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Form Attribute</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td>
+                            <%= fname %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>
+                            <%= lname %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <%= email %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td>
+                            <%= mobile %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Caps</td>
+                        <td>
+                            <%= caps %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Style</td>
+                        <td>
+                            <%= style %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comments</td>
+                        <td>
+                            <%= comments %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <% if(comments.length < 20) { %>
+                <div class="p-3 bg-warning-subtle border border-secondary-subtle rounded-3">
+                    Thank you for your <strong class="text-danger">BRIEF</strong> comment... 
+                    maybe a few more words next time :)
+                </div>
+            <% } else { %>
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    Wonderful! We really appreciate the thoughts you shared in your 
+                    <strong class="text-success">DETAILED</strong> comments!
+                </div>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include('footer'); -%>

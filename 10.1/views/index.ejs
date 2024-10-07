@@ -1,0 +1,144 @@
+<%- include('header'); -%>
+
+    <header>
+        <div class="container-fluid bg-primary-subtle">
+            <div class="col-sm-8 mx-auto text-center py-2">
+                <h1 class="display-4">dKin Caps</h1>
+                <p class="lead ">A young and inspiring organisation whose
+                    primary purpose is to bring you the highest quality headwear available.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3 class="mt-3">dKin Caps: Membership</h3>
+
+            <p>
+                Signing up to become a member of the <strong>dKin Caps</strong> community
+                is very rewarding. Please use the <em>web-based form</em>
+                below to give us your details and you will receive some great offers from us!
+            </p>
+
+            <h5>Membership</h5>
+            <p>
+                Please complete the form below to provide some valuable feedback on your favourite ice cream.
+            </p>
+
+            <div id="formContainer">
+
+                <form action="/submitmembership" method="post" id="postMembershipForm">
+                    <div class="row mb-3">
+                        <label for="inputFirstname" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">
+                            Firstname:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputFirstname" name="firstname">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputSurname" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">Surname:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSurname" name="surname">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputEmail" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">
+                            Email:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEmail" name="email">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputMobile" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">
+                            Mobile:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="inputMobile" name="mobileNumber"
+                                placeholder="04xxxxxxxx">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <legend for="inputNumCaps" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">
+                            Number of caps owned:
+                        </legend>
+                        <div class="col-sm-10 pt-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineCheckbox1" name="inputNumCaps"
+                                    value="0 caps">
+                                <label class="form-check-label" for="inlineCheckbox1">No caps yet</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineCheckbox2" name="inputNumCaps"
+                                    value="1 - 10 caps">
+                                <label class="form-check-label" for="inlineCheckbox2">Between 1 and 10
+                                    caps</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineCheckbox3" name="inputNumCaps"
+                                    value="11 - 29 caps">
+                                <label class="form-check-label" for="inlineCheckbox3">Between 11 and 29
+                                    caps</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineCheckbox4" name="inputNumCaps"
+                                    value="30+ caps">
+                                <label class="form-check-label" for="inlineCheckbox4">More than 30 caps</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <legend class="col-form-label-sm col-sm-2 pt-0 text-sm-end" for="capstyles">Favourite Cap(s):
+                        </legend>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="capstyles" name="capstyle" aria-label="Select a cap style">
+                                <option disabled selected>Select a cap style...</option>
+                                <option value="Snapback Cap">Snapback Cap</option>
+                                <option value="Trucker Cap">Trucker Cap</option>
+                                <option value="Bucket Hat">Bucket Hat</option>
+                                <option value="Beanie">Beanie</option>
+                                <option value="Beret Cap">Beret Cap</option>
+                                <option value="Runners Cap">Runners Cap</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label class="col-sm-2 col-form-label-sm text-sm-end" for="comments">Comments:</label>
+                        <div class="col-sm-10">
+                            <!-- NOTE: No space between <textarea></textarea> tags! -->
+                            <textarea rows="3" class="form-control" id="comments" name="comments"
+                                placeholder="Please provide a few words to describe your favourite cap..."></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-4">
+                        <div class="col-sm mx-auto d-flex justify-content-center ">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div class="col-sm mx-auto d-flex justify-content-center">
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+                <h5 class="mt-4">List Feedback</h5>
+                <p>
+                    The following button will issue a <code>GET</code> request to the <code>/members</code>
+                    route to retrieve feedback stored in the DB.
+                </p>
+                <div class="d-grid gap-5d-md-flex justify-content-md-center mb-4">
+                    <a href="/members">
+                        <button class="btn btn btn-success" id="getfeedbackBtn">
+                            Retrieve Membership Details From Database
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <%- include('footer'); -%>

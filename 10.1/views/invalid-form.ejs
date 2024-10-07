@@ -1,0 +1,35 @@
+<%- include('header'); -%>
+
+<header>
+    <div class="container-fluid bg-primary-subtle">
+        <div class="col-sm-8 mx-auto text-center py-2">
+            <h1 class="display-4">dKin Caps</h1>
+            <p class="lead">A young and inspiring organisation whose 
+            primary purpose is to bring you the highest quality headwear available.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h1>Errors in form</h1>
+        <p>Sorry, there seems to be a problem with the data you supplied.
+        Your form has a total of <strong><%= errorList.length %></strong> errors.</p>
+        <h2>Error List:</h2>
+        <div>
+            <ol>
+                <% errorList.forEach((error) => { %>
+                    <li>
+                        Error in field '<%= error.field %>': <i><%= error.message %></i>
+                    </li>
+                <% }) %>
+            </ol>
+        </div>
+
+        <div class="mt-3">
+            <a href="/">Click here to return to the feedback form</a>
+        </div>
+    </div>
+
+</main>
+<%- include('footer'); -%>

@@ -1,0 +1,28 @@
+{
+  "staff": [
+    {
+      "sid": "0",
+      "name": "Callum Fischer",
+      "abbrv": "Cal C",
+      "position": "Assistant"
+    },
+    {
+      "sid": "1",
+      "name": "Maci Casey",
+      "abbrv": "Marci C",
+      "position": "Intern"
+    },
+    {
+      "sid": "2",
+      "name": "Drew Kaur",
+      "abbrv": "Drew K",
+      "position": "Assistant"
+    },
+    {
+      "sid": "3",
+      "name": "Celia Frye",
+      "abbrv": "Celia F",
+      "position": "Manager"
+    }
+  ]
+}
