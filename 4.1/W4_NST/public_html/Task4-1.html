@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dKin Caps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .navbar.sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+    </style>
+    
+</head>
+
+<!-- Header -->
+<header class="text-center">
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+            <img src="men-cap-icon.svg" alt="Bootstrap" width="2%" height="2%">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav py-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#caps"><b>dKin Caps</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#introduction">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#data">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#pictures">Pictures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#stories">Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#summary">Summary</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="path_to_your_image1.jpg" class="d-block w-100" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="path_to_your_image2.jpg" class="d-block w-100" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="path_to_your_image3.jpg" class="d-block w-100" alt="Third Slide">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="text-black bg-primary-subtle container-fluid" id="caps">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 mx-auto text-center py-5">
+                <p class="fs-1 fw-light">dKin Caps</p>
+                <p class="fw-light">A young and inspiring organisation whose primary purpose is to bring you the highest
+                    quality headwear
+                    available.</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This is the simple page that shows a number of bootstrap components and the styles that
+                enhance plain HTML content – while also supporting a responsive display (screen resizing).</p>
+            <p>Firstly, at the top of the page, within a <code>&lt;header&gt;...&lt;/header&gt;</code> section, it is
+                common to have the navigation and some form of banner / heading content. Here we have a list using the
+                Bootstrap <code>&lt;nav&gt;...&lt;/nav&gt;</code> component in a container with five links to different
+                parts of the webpage, with a blue <code>(bg-primary)</code> background and white
+                <code>(text-white)</code> text. While a second <code>container-fluid</code> with a light blue
+                <code>(bg-primary-subtle)</code> holds the banner details in a centred column of width 8
+                <code>(col-sm-8 mx-auto text-center py-5)</code> and comprising a title of the page and leading
+                sentence.
+            </p>
+            <p>Next is the <code>&lt;body&gt;...&lt;/body&gt;</code> section that holds the content of the page. The
+                content includes the following sections: Introduction (this), Data, Pictures, Stories and a Summary. The
+                table content is formatted, while the pictures and stories of hats applies differing responsive
+                layouts.</p>
+            <p>The final section is a <code>&lt;footer&gt;...&lt;/footer&gt;</code></p>
+            <p>Note that each section has a <a href="#">hyperlink</a> to the Top of the document for navigation.</p>
+            <a href="#introduction" class="d-block text-end">Top</a>
+        </section>
+
+        <!-- Hat Usage Data -->
+        <section id="data">
+            <h2>Hat Usage Data</h2>
+            <p>In this section of the page, we have a nice table with some data from a survey conducted in 2013 as
+                published in the paper <a href="https://example.com">A study on Hat User Habits and Their Perception of
+                    the Product Form</a>. The table below is styled with the bootstrap classes <code>table</code>
+                <code>table-striped-columns</code> <code>table-hover</code>, and the <code>table-primary</code> applied
+                to the table header <code>thead</code>. Some rows in the table also use the colspan control. Note, the
+                table also includes a caption and is constrained to 10 columns on wider screens and all 12 columns on
+                small screens <code>(ie., col-md-10 col-12 mx-auto)</code>.
+            </p>
+
+            <!-- Table -->
+            <div class="table-responsive col-md-10 col-12 mx-auto">
+                <table class="table table-striped-columns table-hover">
+                    <caption>Hat Usage Behavior Data (54 respondents, 2013)</caption>
+                    <thead class="table-light">
+                        <tr>
+                            <th>Item</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4"><strong>Do you usually wear a hat? (Often wearing a hat)</strong></td>
+                        </tr>
+                        <tr>
+
+                            <td>Yes</td>
+                            <td>11</td>
+                            <td>10</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>No</td>
+                            <td>21</td>
+                            <td>12</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>How often do you clean your hat? (frequency of hat washing)</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Whenever it gets dirty</td>
+                            <td>11</td>
+                            <td>10</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Once a week</td>
+                            <td>21</td>
+                            <td>12</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>About once a month</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Never</td>
+                            <td>21</td>
+                            <td>12</td>
+                            <td>33</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#introduction" class="d-block text-end">Top</a>
+        </section>
+
+        <!-- Hats Pictures -->
+
+        <div id="pictures">
+            <h2>Pictures of Hats (Responsive Layout)</h2>
+            <p>Below are some nice pictire of hats and caps, license-free amages downloaded from the website <a href="#"
+                    class="Unslash">Top</a>. These images are placed in
+                a single bootstrap <code>row g-2</code> (where the <i>g-2</i> adds a gutter size 2 between the images)
+                composed of columns using a combines <code>col-sm-4 col-12</code>.
+                The <i>col-sm-4</i> forces 3 images to be in a row on all screen sizes <strong>except</strong> very
+                small ones (&lt;576px) where the <i>col-12</i> forces the images to use all 12
+                    columns grid units and stack each image on top of each other. Each image has the class
+                    <code>img-fluid</code> applied to it, allowing it to resize to the size of the column.
+            </p>
+            <div class="row g-2">
+                <div class="col-sm-4 col-12">
+                    <img src="devin-justesen-USczKmWK7P0-1-unsplash.jpg" alt="Image 1" class="img-fluid">
+                </div>
+                <div class="col-sm-4 col-12">
+                    <img src="alexandra-tran-BYP0MCacQXg-1-unsplash.jpg" alt="Image 2" class="img-fluid">
+                </div>
+                <div class="col-sm-4 col-12">
+                    <img src="brennan-burling-gZ9K9IlkvJA-1-unsplash.jpg" alt="Image 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <a href="#introduction" class="d-block text-end">Top</a>
+
+        <!-- Hats stories -->
+
+        <div id="stories">
+            <h1>Hat Stories</h1>
+            <p>The following three <strong>images and text</strong> are each held within <code>div</code> block that the
+                class attributes <code>p-4 mb-4 bg-primary-subtle rounded</code>, to set the padding, margin-below,
+                background colour and corner shape, respectively. Each <strong>Image & Text</strong> holds a
+                <code>row</code>, with the text assigned to 7 column units <code>col-sm-7</code> and the image is
+                assigned to <code>col-sm-5</code>; allowing the text and images to span 5 and 7 column units
+                respectively on screens greater than 576px units. Added to each of these two columns is the
+                <code>col-12</code>, which says when the screen is smaller than 576px, it will then use all 12 columns
+                grids for each image and text, allowing them to be stacked on top of each other.</p>
+
+            <div class="p-4 mb-4 bg-primary-subtle rounded border border-primary">
+                <div class="row">
+                    <div class="col-sm-7 col-12">
+                        <p class="lead">Sun Hats by <strong>Adrian Siaril</strong></p>
+                        <p class="small">Here, the class <code>img-fluid rounded</code> has been applied to the image.
+                            The title above uses <code>p class="lead"</code> to make the text standout. While this text
+                            uses the <code>p class="small"</code> to distinguish it from the normal paragraphs.</p>
+                    </div>
+                    <div class="col-sm-5 col-12">
+                        <img src="adrian-siaril-Lf8c4IBEMaQ-1-unsplash.jpg" class="img-fluid rounded" alt="Sun Hats">
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 mb-4 bg-primary-subtle rounded border border-primary">
+                <div class="row">
+                    <div class="col-sm-7 col-12">
+                        <p class="lead">Baseball Caps by <strong>Shlok Jethwa</strong></p>
+                        <p class="small">Another picture showing the diverse range of colours and styles that baseball
+                            caps come in. Here the class <code>img-fluid rounded-pill</code> applied to it.</p>
+                    </div>
+                    <div class="col-sm-5 col-12">
+                        <img src="shlok-jethwa-CI1HxiH1T3w-1-unsplash.jpg" class="img-fluid rounded-pill"
+                            alt="Baseball Caps">
+                    </div>
+                </div>
+            </div>
+            <a href="#introduction" class="d-block text-end">Top</a>
+        </div>
+
+        <div id="summary">
+            <h1>Summary</h1>
+            <p>
+                This then concludes the content in the <code>main</code> setion of the page. Note that the end of each
+                content block is a hyperlink back to the <strong>Top</strong>
+                of the page. It uses the <code>&lt;class="text-end"&gt;</code> to align to the right of the screen.
+                <br>
+                The next and final section is the <code>footer</code> which uses <code>div</code> styled with the class
+                <code>container-fluid p-2 bg-dark text-white</code>
+                to align the paragraph text in centre of the container.
+            </p>
+        </div>
+
+    </div>
+    </body>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container-fluid p-2 bg-dark text-white">
+            <p>&copy; 2024 dKin Caps</p>
+        </div>
+    </footer>
+</html>

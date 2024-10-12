@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dKin Caps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            background-color: #caccce;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center">
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-lg bg-primary sticky-top">
+            <div class="container">
+                <img src="men-cap-icon.svg" alt="Bootstrap" width="30px" height="30px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav py-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#caps"><b>dKin Caps</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#introduction">Introduction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#MembersForm">Members Form</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--standout ribbon-->
+        <div class="text-black bg-primary-subtle container-fluid" id="caps">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 mx-auto text-center py-5">
+                    <p class="fw-light" style="font-size: 3.5rem">dKin Caps</p>
+                    <p class="fs-4 fw-light">A young and inspiring organisation whose primary purpose is to bring you
+                        the highest quality headwear available.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <section id="introduction"> 
+            <h1>Introduction</h1>
+            <p>
+                This is the simple page that shows the construction of a <strong>form</strong> for accepting data from a
+                user. Here it is using <i>Bootstrap</i> styling.
+            </p>
+            <a href="#introduction" class="d-block text-end">Top</a>
+            <h1 class="mt-3">Membership Form</h1>
+            <p>Please complete the form below with your details and we will happily add you to our mailing list.</p>
+
+            <!--Membership Form-->
+            <div class="container form-container">
+                <form>
+                    <div class="row mb-3">
+                        <label for="firstname" class="col-sm-2 col-form-label">Firstname:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="surname" class="col-sm-2 col-form-label">Surname:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="mobile" placeholder="04xxxxxxxx" pattern="\d{10}" maxlength="10" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Number of caps owned:</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="capsOwned" id="capsNone"
+                                    value="none">
+                                <label class="form-check-label" for="capsNone">No caps yet</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="capsOwned" id="capsFew" value="few">
+                                <label class="form-check-label" for="capsFew">Between 1 and 10 caps</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="capsOwned" id="capsSome"
+                                    value="some">
+                                <label class="form-check-label" for="capsSome">Between 11 and 29 caps</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="capsOwned" id="capsMany"
+                                    value="many">
+                                <label class="form-check-label" for="capsMany">More than 30 caps</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="favouriteCaps" class="col-sm-2 col-form-label">Favourite Cap(s):</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" size="6" multiple aria-label="Multiple select example"
+                                id="favouriteCaps">
+                                <option value="1">Snapback Cap</option>
+                                <option value="2">Trucker Cap</option>
+                                <option value="3">Bucket Hat</option>
+                                <option value="4">Beanie</option>
+                                <option value="5">Beret Cap</option>
+                                <option value="6">Runners Cap</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Places you wear your cap:</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placePark" value="park">
+                                <label class="form-check-label" for="placePark">In the park</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeCircus" value="park">
+                                <label class="form-check-label" for="placeCircus">At the circus</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeSupermarket"
+                                    value="supermarket">
+                                <label class="form-check-label" for="placeSupermarket">In the supermarket</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeOpera" value="opera">
+                                <label class="form-check-label" for="placeOpera">At the opera</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeShower" value="shower">
+                                <label class="form-check-label" for="placeShower">In the shower</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeDentists" value="dentists">
+                                <label class="form-check-label" for="placeDentists">At the dentists</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="placeOther" value="other">
+                                <label class="form-check-label" for="placeOther">Other...</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="poem" class="form-label col-sm-2">Write a poem about your cap:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="poem" rows="3"></textarea>
+                            <div class="mt-3 form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="sendDiscounts" checked>
+                                <label class="form-check-label" for="sendDiscounts">Yes, please also send me
+                                    discounts!</label>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <button type="submit" class="btn btn-primary me-2">Sign Up</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <a href="#introduction" class="d-block text-end mb-3">Top</a>
+
+            <!-- Footer -->
+            <footer class="text-center">
+                <div class="container-fluid p-2 bg-dark text-white">
+                    <p>&copy; 2024 dKin Caps</p>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                // Initialize all tooltips on the page after the DOM is fully loaded
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+            </script>
+</body>
+</html>
