@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thought Collective</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Import Cormorant Garamond font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Apply the font to the entire page */
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        div,
+        span {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Placeholder banner styling */
+        .placeholder-banner {
+            height: 66vh;
+            /* Gray background color */
+            border: 3px solid #7f7d7d;
+            /* Adding a border */
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Ensures that the footer sticks to the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .scrolling-banner {
+            animation: scrollBanner 20s linear reverse;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes scrollBanner {
+            0% {
+                transform: translateX(60%);
+            }
+
+            100% {
+                transform: translateX(-10%);
+            }
+        }
+
+        .rounded-image {
+            border-radius: 15px;
+            /* You can change the radius value as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="sticky-top" style="background-color: #EAE0C8;">
+            <div class="container-fluid">
+                <div class="row header-top d-flex align-items-center">
+                    <div class="col-md-8">
+                        <div class="scrolling-banner" id="banner">Data Leadership Event - 24th of October 2024 -
+                            "Adopting new technology whilst building foundations" <strong>Register Now!!</strong></div>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-end">
+                        <div class="me-2 d-flex justify-content-end"><strong>Login</strong></div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- Search Form -->
+                        <form class="d-flex" role="search">
+                            <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success m-2" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Main Navigation Bar -->
+            <div class="container-flex">
+                <nav class="navbar navbar-expand-lg" style="background-color: #add8e6; height: 80px;">
+                    <div class="container-fluid">
+                        <!-- Logo -->
+                        <div class="position-absolute start-5">
+                            <img src="FullLogo_Transparent2.png" alt="Bootstrap" width="80%" height="80%">
+                        </div>
+                        <!-- Navbar Links -->
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="home.html" id="homelink">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#introduction" id="membershipDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Membership</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="membership.html">Membership Registration</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#introduction" id="eventsDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Events</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="events.html">All Events</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#introduction" id="publicationsDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="blog.html">Articles</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#introduction" id="contactDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        <!-- Standout Ribbon Section -->
+        <div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+            style="background-image: url('Background.png'); background-size: cover; height: 33vh;">
+            <div class="row justify-content-center">
+                <div class="col-m-12 mx-auto text-center py-5">
+                    <p style="font-size: 5.5rem">Contact Form</p>
+                    <p style="font-size: 2.5rem">Confirm Event Registration, Membership request or send General Query
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <main>
+        <!-- Contact Form Section -->
+        <h1 class="col-sm-8 mx-auto text-center py-5">Contact Form</h1>
+        <div class="container form-container mt-3">
+            <form action="/contact" method="POST" id="contactForm">
+                <!-- First Name Input -->
+                <div class="row mb-3">
+                    <label for="firstname" class="col-sm-2 col-form-label">Firstname:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="firstname" name="fname" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <span id="nameError"></span>
+                    </div>
+                </div>
+                <!-- Surname Input -->
+                <div class="row mb-3">
+                    <label for="surname" class="col-sm-2 col-form-label">Surname:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="surname" name="lname" placeholder="Enter your surname" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <span id="lnameError"></span>
+                    </div>
+                </div>
+                <!-- Email Input -->
+                <div class="row mb-3">
+                    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <span id="emailError"></span>
+                    </div>
+                </div>
+                <!-- Mobile Input -->
+                <div class="row mb-3">
+                    <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
+                    <div class="col-sm-5">
+                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter 10-digit number" required>
+                    </div>
+                    <div class="col-sm-5">
+                        <span id="mobileError"></span>
+                    </div>
+                </div>
+                <!-- Category Selection -->
+                <div class="row mb-3">
+                    <label for="category" class="col-sm-2 col-form-label">Category:</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="membership">Membership</option>
+                            <option value="events">Events</option>
+                            <option value="publications">Publications</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <span id="categoryError"></span>
+                    </div>
+                </div>
+                <!-- Message Text Area -->
+                <div class="row mb-3">
+                    <label for="poem" class="form-label col-sm-2">Message:</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" id="poem" name="comments" rows="3" required></textarea>
+                    </div>
+                </div>
+                <!-- Form Buttons -->
+                <div class="d-flex mt-3">
+                    <input class="btn btn-primary my-3 me-2" type="submit" id="processFormBtn" value="Process Form">
+                    <input class="btn btn-secondary my-3" type="reset" id="resetFormBtn" value="Reset Form">
+                </div>
+            </form>
+            
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-center">
+        <div class="container-fluid p-4 bg-dark text-white">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Contact Address</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 dKin Street<br>Sydney, NSW 2000<br>Australia</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Contact Phone</h5>
+                    <p><i class="fas fa-phone-alt"></i> Phone: +61 2 1234 5678</p>
+                    <p><i class="fas fa-mobile-alt"></i> Mobile: +61 4 1234 5678</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Email</h5>
+                    <p><i class="fas fa-envelope"></i> info@dkin.com.au</p>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2024 Thought Collective</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize all tooltips on the page after the DOM is fully loaded
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+    <script>
+        // JavaScript to set the max attribute for the date input
+        document.addEventListener("DOMContentLoaded", function () {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById("dob").setAttribute('max', today);
+        });
+    </script>
+</body>
+
+</html>

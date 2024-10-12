@@ -1,0 +1,62 @@
+<%- include('header'); -%>
+
+<!-- Standout Ribbon Section -->
+<div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+<div class="row justify-content-center">
+    <div class="col-m-12 mx-auto text-center py-5">
+        <p style="font-size: 5.5rem">Connect, share and learn</p>
+        <p style="font-size: 2.5rem">Bringing together the top talent in Data!</p>
+    </div>
+</div>
+</div>
+
+<main class="container mt-5">
+    <h1 class="mb-4"><%= title %></h1>
+
+    <!-- Success message -->
+    <p>Your form has been successfully submitted! Here are the details you provided:</p>
+
+    <!-- Display submitted form details in a table -->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>First Name</td>
+                <td><%= fname %></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><%= lname %></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><%= email %></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><%= mobile %></td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td><%= category %></td>
+            </tr>
+            <tr>
+                <td>Comments</td>
+                <td><%= comments %></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Back to contact form link -->
+    <div class="mt-4">
+        <a href="/contact" class="btn btn-primary">Submit Another Response</a>
+    </div>
+</main>
+
+<%- include('footer'); -%>

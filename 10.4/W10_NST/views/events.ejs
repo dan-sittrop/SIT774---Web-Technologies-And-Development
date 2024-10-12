@@ -1,0 +1,97 @@
+<%- include('header'); -%>
+
+<!-- Standout Ribbon Section -->
+<div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+<div class="row justify-content-center">
+    <div class="col-m-12 mx-auto text-center py-5">
+        <p style="font-size: 5.5rem">Connect, share and learn</p>
+        <p style="font-size: 2.5rem">Bringing together the top talent in Data!</p>
+    </div>
+</div>
+</div>
+
+<!-- Main Content Section -->
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- First column (one-third of the screen width) -->
+            <div class="col-md-4 p-5">
+                <img src="Breaky Panel.jpg" alt="Description of Image" class="rounded-image"
+                    style="max-width: 100%; height: auto;">
+            </div>
+
+            <!-- Second column (two-thirds of the screen width) -->
+            <div class="col-md-8 mb-5 d-flex align-items-center justify-content-center"
+                style="background-color: #c7dee6; height: auto;">
+                <div>
+                    <h1><strong><a id="event1">Adopting new technologies whilst building foundations</a></strong></h1>
+                    <h5><i><a id="date1">12/10/2024</a></i></h5>
+                    <ul style="list-style-position: inside;">
+                        <li>Do you want to take advantage of new tech?</li>
+                        <li>Do you also need to build foundational data & analytics infrastructure?</li>
+                        <li>Do you want to know how to balance both for maximum value?</li>
+                    </ul>
+                    <div class="mt-4">
+                        <form id="registerForm1" class="register-form" data-event="event1" data-date="date1" data-category="events" action="/register" method="POST">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign Up Now</button>
+                        </form>
+                    </div>
+                </div>  
+            </div>
+        </div>  
+        <div class="row">
+            <!-- Second column (two-thirds of the screen width) -->
+            <div class="col-md-8 mb-5 d-flex align-items-center justify-content-center"
+                style="background-color: #c7dee6; height: auto;">
+                <div>
+                    <h1><strong><a id="event2">Workshop: Data modelling architectures</a></strong></h1>
+                    <h5><i><a id="date2">12/10/2024</a></i></h5>
+                    <ul style="list-style-position: inside;">
+                        <li>Kimball Vs Inmon</li>
+                        <li>Data-vault and Data-mesh</li>
+                        <li>Governance</li>
+                    </ul>
+                    <div class="mt-4">
+                        <form id="registerForm2" class="register-form" data-event="event2" data-date="date2" data-category="events" action="/register" method="POST">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign Up Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- First column (one-third of the screen width) -->
+            <div class="col-md-4 p-5">
+                <img src="Workshop.jpg" alt="Description of Image" class="rounded-image"
+                    style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all forms with the class 'register-form'
+        const registerForms = document.querySelectorAll('.register-form');
+
+        // Loop through each form and add a submit event listener
+        registerForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                // Get `date`, `event`, and `category` element IDs from data attributes
+                const dateElementId = form.getAttribute('data-date');
+                const eventElementId = form.getAttribute('data-event');
+                const category = form.getAttribute('data-category'); // Get `data-category` value
+
+                // Get the content of the corresponding `date` and `event` elements
+                const dateValue = document.getElementById(dateElementId).innerHTML;
+                const eventValue = document.getElementById(eventElementId).innerHTML;
+
+                // Append the `date`, `event`, and `category` values to the form action URL
+                this.action = `/register?date1=${encodeURIComponent(dateValue)}&event1=${encodeURIComponent(eventValue)}&category=${encodeURIComponent(category)}`;
+            });
+        });
+    });
+</script>
+
+
+
+<%- include('footer'); -%>

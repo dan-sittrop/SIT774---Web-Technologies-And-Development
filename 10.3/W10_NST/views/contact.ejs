@@ -1,0 +1,93 @@
+<%- include('header'); -%>
+
+<!-- Standout Ribbon Section -->
+<div class="text-white container-fluid d-flex justify-content-center align-items-center" id="caps"
+style="background-image: url('/images/Background.png'); background-size: cover; height: 33vh;">
+<div class="row justify-content-center">
+    <div class="col-m-12 mx-auto text-center py-5">
+        <p style="font-size: 5.5rem">Connect, share and learn</p>
+        <p style="font-size: 2.5rem">Bringing together the top talent in Data!</p>
+    </div>
+</div>
+</div>
+
+<!-- Main Content Section -->
+<main>
+    <!-- Contact Form Section -->
+    <h1 class="col-sm-8 mx-auto text-center py-5">Contact Form</h1>
+    <div class="container form-container mt-3">
+        <form action="/contact" method="POST" id="contactForm">
+            <!-- First Name Input -->
+            <div class="row mb-3">
+                <label for="firstname" class="col-sm-2 col-form-label">Firstname:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="firstname" name="fname" placeholder="Enter your first name" required>
+                </div>
+                <div class="col-sm-5">
+                    <span id="nameError"></span>
+                </div>
+            </div>
+            <!-- Surname Input -->
+            <div class="row mb-3">
+                <label for="surname" class="col-sm-2 col-form-label">Surname:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="surname" name="lname" placeholder="Enter your surname" required>
+                </div>
+                <div class="col-sm-5">
+                    <span id="lnameError"></span>
+                </div>
+            </div>
+            <!-- Email Input -->
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                <div class="col-sm-5">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" value="<%= email ? email : '' %>" required>
+                </div>
+                <div class="col-sm-5">
+                    <span id="emailError"></span>
+                </div>
+            </div>
+            <!-- Mobile Input -->
+            <div class="row mb-3">
+                <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
+                <div class="col-sm-5">
+                    <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter 10-digit number" required>
+                </div>
+                <div class="col-sm-5">
+                    <span id="mobileError"></span>
+                </div>
+            </div>
+            <!-- Category Selection -->
+            <div class="row mb-3">
+                <label for="category" class="col-sm-2 col-form-label">Category:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="membership">Membership</option>
+                        <option value="events">Events</option>
+                        <option value="publications">Publications</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-sm-5">
+                    <span id="categoryError"></span>
+                </div>
+            </div>
+            <!-- Message Text Area -->
+            <div class="row mb-3">
+                <label for="poem" class="form-label col-sm-2">Message:</label>
+                <div class="col-sm-5">
+                    <textarea class="form-control" id="poem" name="comments" rows="3" required></textarea>
+                </div>
+            </div>
+            <!-- Form Buttons -->
+            <div class="d-flex mt-3">
+                <input class="btn btn-primary my-3 me-2" type="submit" id="processFormBtn" value="Process Form">
+                <input class="btn btn-secondary my-3" type="reset" id="resetFormBtn" value="Reset Form">
+            </div>
+        </form>
+        
+    </div>
+</main>
+
+<%- include('footer'); -%>
