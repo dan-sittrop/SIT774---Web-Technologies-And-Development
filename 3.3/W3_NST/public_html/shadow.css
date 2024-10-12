@@ -1,0 +1,28 @@
+h1 {
+    box-shadow: 10px 10px 8px rgb(123, 87, 87);
+    border-radius: 45px;
+}
+
+h2 {
+    box-shadow: 5px 5px 8px rgb(115, 113, 113);
+    border-radius: 15px;
+}
+
+nav ul{
+    box-shadow: 5px 5px 8px rgb(115, 113, 113);
+    border-radius: 15px;
+}
+
+.content {
+    box-shadow: 5px 5px 8px rgb(115, 113, 113);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+footer {
+    box-shadow: 5px 5px 8px rgb(115, 113, 113);
+    border-radius: 15px;
+}

@@ -1,0 +1,58 @@
+/* Apply font-family and background color to the entire body */
+body {
+    font-family: 'Mate', Georgia, Garamond, 'Times New Roman', serif, 'Righteous';
+    background-color: cornsilk;
+}
+
+/* Style for the navigation bar */
+nav {
+    font-size: 1.2em; /*font size for navigation bullet points */
+    font-weight: 900;
+    margin: 1.5em; /* Add margin for the navigation bar */
+    font-family: 'Cinzel', Georgia, Garamond, 'Times New Roman', serif, 'Philosopher';
+}
+
+section {
+    border-style: solid; /* solid border around sections */
+    margin: 0.5em; /* margin around sections */
+}
+
+footer {
+    font-size: 0.8em;
+    color: white; /* White text in footer */
+    text-align: center; /* Center align text in footer */
+    padding: 0.2em; /* Padding inside the footer */
+    background-color: #008F88; /* Background color of the footer */
+}
+
+footer p {
+    margin: 0.1em;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', Verdana, Tahoma, sans-serif, 'Orbitron'; /* Font selections for h1, h2, and h3 */
+    font-style: italic;
+}
+
+h1 {
+    background-color: #004643; /* Background color for h1 */
+    color: white; /* Text color for h1 */
+    padding: 1.1rem; /* Padding inside h1 */
+    text-align: center; /* Center align text in h1 */
+    letter-spacing: 0.2em;
+}
+
+h2, h3 {
+    background-color: gold; /* Background color for h2 and h3 */
+    color: #0c1618; /* Text color for h2 and h3 */
+    padding-top: 0.8em; /* Top padding for h2 and h3 */
+    padding-bottom: 0.3em; /* Bottom padding for h2 and h3 */
+    padding-left: 0%; /* Left padding for h2 and h3 */
+    padding-right: 0%; /* Right padding for h2 and h3 */
+}
+
+/* Highlight class for emphasizing text */
+.highlight {
+    background-color: peachpuff; /* Background color for highlighted text */
+    font-weight: bold; /* Bold font weight for highlighted text */
+}
